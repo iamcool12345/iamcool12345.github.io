@@ -42,7 +42,7 @@ const bikes = [
         {
         name: "oger-mobil",
         type: "city",
-        image: "images/bikes/drache.png"
+        image: "https://raw.githubusercontent.com/iamcool12345/iamcool12345.github.io/refs/heads/main/images/bikes/Drache.png"
     }
 ];
 
