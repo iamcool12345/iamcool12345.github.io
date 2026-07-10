@@ -2,6 +2,8 @@ body{
     /* background-color: #808080; */
     background-image: url("background.jpg");
     background-color: #808080;
+    margin-left: 10%;
+    margin-right: 10%;
       background-repeat: no-repeat;
   background-attachment: fixed; 
   background-size: cover ;
@@ -278,11 +280,14 @@ hr{
     transition: 0.3s;
 }
 
-.gridbox:hover{
+.top:hover{
     transform: translateY(-20px);
     background: rgba(10,10,10,0.25);
 }
-
+.bottom:hover{
+    transform: translateY(+20px);
+    background: rgba(255,10,10,0.25);
+}
 .gridbox h2{
     margin-bottom: 15px;
 }
@@ -306,24 +311,124 @@ hr{
 }
 
 .formbox input{
-    width: 90%;
+
     padding: 12px;
     margin: 8px 0 20px 0;
-
+    font-family: comic sans ms;
     border: none;
     border-radius: 5px;
-}
-
-.formbox button{
+    --bottom-glow: radial-gradient(farthest-corner at bottom center,	rgba(255, 255, 255, 0.7),	transparent);
     padding: 12px 30px;
 
     border: none;
-    border-radius: 2px;
 
     background: chocolate;
     color: white;
     font-size: 18px;
     cursor: pointer;
+    /* Colors */
+	--hue: 0;
+    width: 80%;
+	--button-background: oklch(75% 0.1 var(--hue) / 0.8);
+	--bg-dark: oklch(45% 0.1 var(--hue) / 0.75);
+	--button-foreground: oklch(15% 0.05 var(--hue));
+	/* Style */
+	background-color: var(--button-background);
+	background: var(--bottom-glow),	linear-gradient(to bottom, var(--bg-dark), var(--button-background));
+	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+	border: 1px solid var(--button-background);
+	border-radius: 9px;
+	cursor: pointer;
+	margin: 1em 1ex;
+	padding: 1ex 1em;
+	position: relative;
+	text-shadow: 0 2px .5em #0003;
+	transition: all 300ms;
+	/* Text */
+	color: var(--button-foreground);
+
+	font-weight: 700;
+
+	&::after {
+		content: "";
+		position: absolute;
+		top: 4%;
+		left: 0.5em;
+		width: calc(100% - 1em);
+		height: 40%;
+		background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.1));
+		border-radius: 10px;
+		transition: background 400ms;
+	}
+
+	&:hover,
+	&:focus {
+		box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
+        --hue: 200;
+	}
+
+	&:active {
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+	}
+}
+
+.formbox button{
+    --bottom-glow: radial-gradient(farthest-corner at bottom center,	rgba(255, 255, 255, 0.7),	transparent);
+    padding: 12px 30px;
+    
+    align-self: center;
+    border: none;
+
+    background: chocolate;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    /* Colors */
+	--hue: 0;
+    width: 90%;
+    margin-left: 10%;
+    margin-right: 10%;
+	--button-background: oklch(75% 0.1 var(--hue) / 0.8);
+	--bg-dark: oklch(45% 0.1 var(--hue) / 0.75);
+	--button-foreground: oklch(15% 0.05 var(--hue));
+	/* Style */
+	background-color: var(--button-background);
+	background: var(--bottom-glow),	linear-gradient(to bottom, var(--bg-dark), var(--button-background));
+	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+	border: 1px solid var(--button-background);
+	border-radius: 9999px;
+	cursor: pointer;
+	margin: 1em 1ex;
+	padding: 1ex 1em;
+	position: relative;
+	text-shadow: 0 2px .5em #0003;
+	transition: all 300ms;
+	/* Text */
+	color: var(--button-foreground);
+	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lunasima", sans-serif;
+	font-weight: 700;
+
+	&::after {
+		content: "";
+		position: absolute;
+		top: 4%;
+		left: 0.5em;
+		width: calc(100% - 1em);
+		height: 40%;
+		background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.1));
+		border-radius: 10px;
+		transition: background 400ms;
+	}
+
+	&:hover,
+	&:focus {
+		box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
+        --hue: 200;
+	}
+
+	&:active {
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+	}
 }
 
 .formbox button:hover{
@@ -399,25 +504,59 @@ hr{
     color: #4db8ff;
 }
 
-
-
-
 .bike-type-selector{
     display:flex;
     justify-content:center;
     align-items:center;
     gap:30px;
     margin-bottom:40px;
-
 }
 
 .bike-type-selector button{
-    width:50px;
-    height:50px;
-    border:none;
-    border-radius:50%;
-    cursor:pointer;
-    font-size:24px;
+    --hue: 0;
+    --bottom-glow: radial-gradient(farthest-corner at bottom center,	rgba(255, 255, 255, 0.7),	transparent);
+    width: 10%;
+	--button-background: oklch(75% 0.1 var(--hue) / 0.8);
+	--bg-dark: oklch(45% 0.1 var(--hue) / 0.75);
+	--button-foreground: oklch(15% 0.05 var(--hue));
+	/* Style */
+	background-color: var(--button-background);
+	background: var(--bottom-glow),	linear-gradient(to bottom, var(--bg-dark), var(--button-background));
+	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+	border: 1px solid var(--button-background);
+	border-radius: 9px;
+	cursor: pointer;
+	margin: 1em 1ex;
+	padding: 1ex 1em;
+	position: relative;
+	text-shadow: 0 2px .5em #0003;
+	transition: all 300ms;
+	/* Text */
+	color: var(--button-foreground);
+
+	font-weight: 700;
+
+	&::after {
+		content: "";
+		position: absolute;
+		top: 4%;
+		left: 0.5em;
+		width: calc(100% - 1em);
+		height: 40%;
+		background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.1));
+		border-radius: 10px;
+		transition: background 400ms;
+	}
+
+	&:hover,
+	&:focus {
+		box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
+        --hue: 200;
+	}
+
+	&:active {
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+	}
 }
 
 #currentType{
@@ -426,27 +565,13 @@ hr{
     font-size:28px;
     font-family:Arial;
     text-transform:capitalize;
-}   
-.bike-card h3{
-    margin: 0;
-    padding: 12px;
-
-    background: linear-gradient(
-        to bottom,
-        #555,
-        #222
-    );
-
-    border-bottom: 1px solid #111;
 }
-
 
 .bike-section{
     width: 90%;
     max-width: 1400px;
     margin: 80px auto;
     text-align: center;
-    grid-column: 1;
 }
 
 .section-title{
@@ -462,25 +587,63 @@ hr{
 }
 
 .filter-btn{
-    padding: 10px 20px;
-    margin: 5px;
 
-    border: 1px solid #222;
+ --bottom-glow: radial-gradient(farthest-corner at bottom center,	rgba(255, 255, 255, 0.7),	transparent);
+    padding: 12px 30px;
+    
+    align-self: center;
+    border: none;
 
-    background: linear-gradient(
-        to bottom,
-        #666,
-        #333
-    );
-
+    background: chocolate;
     color: white;
-    font-weight: bold;
+    font-size: 18px;
     cursor: pointer;
+    /* Colors */
+	--hue: 0;
 
-    box-shadow:
-        inset 0 1px 0 rgba(255,255,255,.3),
-        0 1px 2px rgba(0,0,0,.5);
+	--button-background: oklch(75% 0.1 var(--hue) / 0.8);
+	--bg-dark: oklch(45% 0.1 var(--hue) / 0.75);
+	--button-foreground: oklch(15% 0.05 var(--hue));
+	/* Style */
+	background-color: var(--button-background);
+	background: var(--bottom-glow),	linear-gradient(to bottom, var(--bg-dark), var(--button-background));
+	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+	border: 1px solid var(--button-background);
+	border-radius: 9999px;
+	cursor: pointer;
+	margin: 1em 1ex;
+	padding: 1ex 1em;
+	position: relative;
+	text-shadow: 0 2px .5em #0003;
+	transition: all 300ms;
+	/* Text */
+	color: var(--button-foreground);
+	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lunasima", sans-serif;
+	font-weight: 700;
+
+	&::after {
+		content: "";
+		position: absolute;
+		top: 4%;
+		left: 0.5em;
+		width: calc(100% - 1em);
+		height: 40%;
+		background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.1));
+		border-radius: 4px;
+		transition: background 400ms;
+	}
+
+	&:hover,
+	&:focus {
+		box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
+        --hue: 200;
+	}
+
+	&:active {
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+	}
 }
+
 
 .filter-btn:hover,
 .filter-btn.active{
@@ -531,4 +694,46 @@ hr{
 
 .bike-card p{
     margin-bottom: 20px;
+}
+.bike-card h3{
+
+ --hue: 0;
+    --bottom-glow: radial-gradient(farthest-corner at bottom center,	rgba(255, 255, 255, 0.7),	transparent);
+    width: 85%;
+    
+	--button-background: oklch(75% 0.1 var(--hue) / 0.8);
+	--bg-dark: oklch(45% 0.1 var(--hue) / 0.75);
+	--button-foreground: oklch(15% 0.05 var(--hue));
+	background-color: var(--button-background);
+	background: var(--bottom-glow),	linear-gradient(to bottom, var(--bg-dark), var(--button-background));
+	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+	border: 1px solid var(--button-background);
+	border-radius: 0px;
+	cursor: pointer;
+	
+	padding: 1ex 1em;
+	position: relative;
+	text-shadow: 0 2px .5em #0003;
+	transition: all 300ms;
+
+	color: var(--button-foreground);
+
+	font-weight: 700;
+
+	&::after {
+		content: "";
+		position: absolute;
+		top: 4%;
+		left: 0em;
+		width: 100% /*calc(100% - 1em)*/;
+		height: 50%;
+		background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.1));
+		border-radius: 0px;
+
+	} 
+
+}
+
+.bike-section{
+    grid-column: 1;
 }
