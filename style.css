@@ -47,6 +47,7 @@ body{
      width: 10px;
 }
 .formbox{
+    
     font-size: 30px;
     margin-left: 75px;
     margin-right: 75px;
@@ -311,7 +312,6 @@ hr{
 }
 
 .formbox input{
-
     padding: 12px;
     margin: 8px 0 20px 0;
     font-family: comic sans ms;
@@ -372,8 +372,7 @@ hr{
 	}
 }
 
-.formbox button{
-    --bottom-glow: radial-gradient(farthest-corner at bottom center,	rgba(255, 255, 255, 0.7),	transparent);
+.formbox button{ --bottom-glow: radial-gradient(farthest-corner at bottom center,	rgba(255, 255, 255, 0.7),	transparent);
     padding: 12px 30px;
     
     align-self: center;
@@ -428,18 +427,12 @@ hr{
 
 	&:active {
 		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-	}
-}
+	}}
 
 .formbox button:hover{
     opacity: 0.9;
     color: #00ff00;
 }
-
-
-
-
-
 .topbar{
     margin-top: -.3%;
     width: 100%;
@@ -738,19 +731,19 @@ hr{
     grid-column: 1;
 }
 .nicebutton{
-    -bottom-glow: radial-gradient(farthest-corner at bottom center,	rgba(255, 255, 255, 0.7),	transparent);
-    padding: 12px 30px;
+        padding: 12px 30px;
     
     align-self: center;
     border: none;
 
-    background: chocolate;
-    color: white;
+    /* background: chocolate; */
+    /* color: white; */
     font-size: 18px;
     cursor: pointer;
     /* Colors */
-	--hue: 0;
-
+	--hue: 10;
+    -bottom-glow: radial-gradient(farthest-corner at bottom center,	rgba(255, 255, 255, 0.7),	transparent);
+   
 	--button-background: oklch(75% 0.1 var(--hue) / 0.8);
 	--bg-dark: oklch(45% 0.1 var(--hue) / 0.75);
 	--button-foreground: oklch(15% 0.05 var(--hue));
@@ -792,4 +785,9 @@ hr{
 	&:active {
 		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 	}
+}
+.map{
+    grid-column-start: 1;
+    grid-row-start: 5;
+
 }
