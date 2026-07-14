@@ -786,8 +786,61 @@ hr{
 		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 	}
 }
-.map{
-    grid-column-start: 1;
-    grid-row-start: 5;
 
+.side-image{
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 180px;
+    height: 70vh;
+    object-fit: cover;
+    z-index: 1;
+   
+}
+
+.left-side{
+    left: 10px;
+}
+
+.right-side{
+    right: 10px;
+}
+.booking-section{
+    grid-row-start: 6;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.booking-left,
+.booking-right{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    
+    width: 180px;
+    height: 500px;
+    object-fit: cover;
+}
+
+.booking-left{
+    left: 10%;
+}
+
+.booking-right{
+    right: 10%;
+}
+#map{
+        grid-column-start: 1;
+    grid-row-start: 5;
+    width: 90%;
+    height: 600px;
+
+    margin: 50px auto;
+
+    border: 3px solid white;
+    border-radius: 8px;
+
+    overflow: hidden;
 }

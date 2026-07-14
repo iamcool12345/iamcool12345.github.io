@@ -116,3 +116,33 @@ $(function () {
     });
 
 });
+
+const map = L.map('map').setView([36.7213, -4.4214], 13);
+
+L.tileLayer(
+    'https://{s}.tile-cyclosm.openstreetmap.fr/cyclosm/{z}/{x}/{y}.png',
+    {
+        maxZoom: 19,
+        attribution: '&copy; OpenStreetMap contributors'
+    }
+).addTo(map);
+
+// Official Malaga bike paths
+fetch('https://datosabiertos.malaga.eu/recursos/urbanismoEInfraestructura/equipamientos/da_carrilesBici-4326.geojson')
+    .then(res => res.json())
+    .then(data => {
+        L.geoJSON(data, {
+            style: {
+                color: '#00c853',
+                weight: 5,
+                opacity: 0.9
+            },
+            onEachFeature: function(feature, layer) {
+                if (feature.properties) {
+                    layer.bindPopup(
+                        `<strong>${feature.properties.nombre || 'Bike path'}</strong>`
+                    );
+                }
+            }
+        }).addTo(map);
+    });
