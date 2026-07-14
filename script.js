@@ -128,7 +128,7 @@ L.tileLayer(
 ).addTo(map);
 
 // Official Malaga bike paths
-fetch('https://datosabiertos.malaga.eu/recursos/urbanismoEInfraestructura/equipamientos/da_carrilesBici-4326.geojson')
+fetch('/da_carrilesBici-25830.geojson')
     .then(res => res.json())
     .then(data => {
         L.geoJSON(data, {
