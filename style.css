@@ -185,10 +185,14 @@ hr {
 
 	margin-bottom: 80px;
 }
-.events{
+/* .events{
     background-image: url("images/site/infocards/events.png");
     
 }
+.accommodations{
+    background-image: url("images/site/infocards/accomodations.jpg");
+    
+} */
 .gridbox {
 	min-height: 420px;
 
@@ -210,6 +214,14 @@ hr {
 
 	padding: 25px;
 	transition: 0.3s;
+}
+.events{
+    grid-column: 3;
+}
+.accommodations{
+    grid-row: 4;
+    grid-column: 2;
+    grid-column: span 3;
 }
 
 .top:hover {
