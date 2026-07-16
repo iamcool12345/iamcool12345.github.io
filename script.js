@@ -39,12 +39,12 @@ const bikes = [
         name: "Daily Rider",
         type: "city",
         image: "images/city2.jpg"
-    },
+    }/*,
         {
         name: "oger-mobil",
         type: "city",
         image: "https://raw.githubusercontent.com/iamcool12345/iamcool12345.github.io/refs/heads/main/images/bikes/Drache.png"
-    }
+    }*/
 ];
 
 const categories = [
@@ -133,10 +133,40 @@ L.tileLayer(
 
 function loaded(){
 
- $("#Language").on("click",function() {pressed(1)});
-alert("a"); 
+   
+    $(".Land").on("click",function() {pressed(2)});
+    $("#Language").on("click",function() {pressed(1)});
+    $(".Water").on("click",function() {pressed(3)});
+    $(".Bike").on("click",function() {pressed(4)});
+    $(".events").on("click",function() {pressed(5)});
+    $(".accommodations").on("click",function() {pressed(6)});
+    $(".left-side").on("click",function() {pressed(7)});
+    $(".right-side").on("click",function() {pressed(8)});
+// alert("a"); 
 }
 
 function pressed(number){
-window.open("https://google.com");
+    // alert("meddl loide");   
+    // alert("d");
+    switch (number){
+        case 1:
+            window.open("https://google.com");
+        break;
+        case 2:
+             
+        break;
+        case 3:
+
+        break;
+        case 5:
+            window.open("https://reckssel.github.io/newspaper_for_vamos/");
+        break;
+        case 7:
+            window.open("https://web.archive.org/web/20251130071750im_/http://www.themostamazingwebsiteontheinternet.com/");
+        break;
+        case 8:
+
+        break;
+    }
+
 }
