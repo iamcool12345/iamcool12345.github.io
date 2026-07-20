@@ -1,51 +1,5 @@
 $(document).ready(loaded);
-const bikes = [
-    {
-        name: "Trail Blazer",
-        type: "mountain",
-        image: "images/mountain1.jpg"
-    },
-    {
-        name: "Rock Rider",
-        type: "mountain",
-        image: "images/mountain2.jpg"
-    },
-    {
-        name: "Speed Pro",
-        type: "road",
-        image: "images/road1.jpg"
-    },
-    {
-        name: "Velocity X",
-        type: "road",
-        image: "images/road2.jpg"
-    },
-    {
-        name: "Eco Cruiser",
-        type: "electric",
-        image: "images/ebike1.jpg"
-    },
-    {
-        name: "Urban Volt",
-        type: "electric",
-        image: "images/ebike2.jpg"
-    },
-    {
-        name: "City Comfort",
-        type: "city",
-        image: "images/city1.jpg"
-    },
-    {
-        name: "Daily Rider",
-        type: "city",
-        image: "images/city2.jpg"
-    }/*,
-        {
-        name: "oger-mobil",
-        type: "city",
-        image: "https://raw.githubusercontent.com/iamcool12345/iamcool12345.github.io/refs/heads/main/images/bikes/Drache.png"
-    }*/
-];
+
 
 const categories = [
     "all",
@@ -53,12 +7,14 @@ const categories = [
     "road",
     "electric",
     "city"
+    
 ];
 
 let currentIndex = 0;
 
 function renderBikes(type = "all") {
 
+    const lang = getLanguage();
     const deck = $(".bike-deck");
 
     deck.empty();
@@ -72,9 +28,9 @@ function renderBikes(type = "all") {
 
         deck.append(`
             <div class="bike-card">
-                <img src="${bike.image}" alt="${bike.name}">
-                <h3>${bike.name}</h3>
-                <p>${bike.type.charAt(0).toUpperCase() + bike.type.slice(1)} Bike</p>
+                <img src="${bike.image}" alt="${bike.name[lang]}">
+                <h3>${bike.name[lang]}</h3>
+                <p>${translations[lang][bike.type]} Bike</p>
             </div>
         `);
 
@@ -83,9 +39,10 @@ function renderBikes(type = "all") {
 function updateCategory() {
 
     const type = categories[currentIndex];
+    const lang = getLanguage();
 
     $("#currentType").text(
-        type.charAt(0).toUpperCase() + type.slice(1)
+        translations[lang][type]
     );
 
     renderBikes(type);
@@ -132,41 +89,44 @@ L.tileLayer(
 // Official Malaga bike paths
 
 function loaded(){
-
+ const params = new URLSearchParams(window.location.search);
+params.set("Rainer", "winkler");
    
-    $(".Land").on("click",function() {pressed(2)});
+    $("#Land").on("click",function() {pressed(2)});
     $("#Language").on("click",function() {pressed(1)});
-    $(".Water").on("click",function() {pressed(3)});
-    $(".Bike").on("click",function() {pressed(4)});
-    $(".events").on("click",function() {pressed(5)});
-    $(".accommodations").on("click",function() {pressed(6)});
+    $("#Water").on("click",function() {pressed(3)});
+    $("#Bike").on("click",function() {pressed(4)});
+    $("#events").on("click",function() {pressed(5)});
+    $("#accomodations").on("click",function() {pressed(6)});
     $(".left-side").on("click",function() {pressed(7)});
     $(".right-side").on("click",function() {pressed(8)});
+    $(".booking-left").on("click",function() {pressed(9)});
+    $(".booking-right").on("click",function() {pressed(10)});
+    $("#imprint").on("click",function() {pressed(11)});
+    $("#legal").on("click",function() {pressed(12)});
 // alert("a"); 
 }
 
-function pressed(number){
-    // alert("meddl loide");   
-    // alert("d");
-    switch (number){
-        case 1:
-            window.open("https://google.com");
-        break;
-        case 2:
-             
-        break;
-        case 3:
 
-        break;
-        case 5:
-            window.open("https://reckssel.github.io/newspaper_for_vamos/");
-        break;
-        case 7:
-            window.open("https://web.archive.org/web/20251130071750im_/http://www.themostamazingwebsiteontheinternet.com/");
-        break;
-        case 8:
+function populateBikeDropdown() {
 
-        break;
-    }
+    const lang = getLanguage();
+    const select = $("#bikeSelect");
 
+    select.empty();
+
+    bikes.forEach(bike => {
+
+        select.append(`
+            <option value="${bike.name[lang]}">
+                ${bike.name[lang]} (${translations[lang][bike.type]})
+            </option>
+        `);
+
+    });
 }
+
+$(function () {
+    populateBikeDropdown();
+});
+
