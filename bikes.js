@@ -43,7 +43,7 @@ const bikes = [
     {
         name: "Daily Rider",
         type: "city",
-        image: "images/city2.jpg"
+        image: "images/city2.jpg"                               
     }/*,
         {
         name: "oger-mobil",

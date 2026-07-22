@@ -1,3 +1,5 @@
+$(document).ready(setlanguage);
+function setlanguage(){
 const lang = getLanguage();
 $(".section-title").text(translations[lang].fleet);
 $(".Water h2").text(translations[lang].waterTours);
@@ -7,6 +9,12 @@ $("#Bike h2").text(translations[lang].bike);
 $("#events h2").text(translations[lang].events);
 $("#accomodations h2").text(translations[lang].accomodations);
 $(".formbox h2").text(translations[lang].booking);
+$(".formbox h2").text(translations[lang].booking);  
+$("#intro").text(translations[lang].intro); 
+$(".header").text(translations[lang].header); 
+$(".topbar-left").text(translations[lang].topbar); 
+$("#fname").text(translations[lang].fname); 
+}
 $(function () {
 
     const params = new URLSearchParams(window.location.search);

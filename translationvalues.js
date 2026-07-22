@@ -1,23 +1,10 @@
-const text = {
-    en: {
-        waterTours: "Water Tours",
-        booking: "Booking",
-        land: "Land Tours",
-        water: "Water Tours",
-        bike :"bike",
-        accomodations:"accomodations"
-    },
-    es: {
-        waterTours: "Excursiones Acuáticas",
-        booking: "Reservas",
-        land: "Land Tours",
-        water: "Water Tours",
-        bike :"bike",
-        accomodations:"accomodations"
-    }
-};
+
 const translations = {
     en: {
+       
+        topbar:"Tourism Agency",
+        intro: "Vamos Agency",
+        header: "Tourism Agency",
         //bikes
         fleet:"bike fleet",
         all: "All",
@@ -32,10 +19,19 @@ const translations = {
         bike :"bike",
         accomodations:"accomodations",
         //booking
-        booking: "Booking"
+        booking: "Booking",
+        fname: "First name",
+        lname: "Last name",
+        Email: "Email",
+        biketype: "Bike Type",
+        Quantity: "Quantity",
+        Date: "Date",
+        Bookbutton: "Book Now"
     },
     es: {
-
+        topbar:"Tourism Agency",
+        intro: "Vamos Agency",
+        header: "Tourism Agency",
         //bikes
         fleet:"bikA fleeTA",
         all: "Todos",
@@ -52,6 +48,13 @@ const translations = {
         bike :"bika",
         accomodations:"accomodations",
         //booking
-        booking: "Reservas"
+        booking: "Reservas",
+        fname: "Nombre",
+        lname: "Last name",
+        Email: "Email",
+        biketype: "Bike Type",
+        Quantity: "Quantity",
+        Date: "Date",
+        Bookbutton: "Book Now"
     }
 };
